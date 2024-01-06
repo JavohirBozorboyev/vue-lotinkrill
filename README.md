@@ -1,2 +1,2 @@
 ## Lotin Krill App
-# vue-lotinkrill
+### Bozorboyev Javohir
