@@ -2,7 +2,11 @@
 <script setup>
 import { reactive, ref, } from 'vue'
 
-const lang = ref('uz')
+if (localStorage.getItem('lang') == null) {
+  localStorage.setItem('lang', 'uz')
+
+}
+const lang = ref(localStorage.getItem('lang'))
 const initialLetterLength = 5000
 const uz = reactive({
   a: 'а',
@@ -207,7 +211,8 @@ const kr = reactive({
 let gap = ref("")
 
 const Language = (e) => {
-  lang.value = e
+  localStorage.setItem('lang', String(e))
+  lang.value = localStorage.getItem('lang')
   gap.value = ""
   document.getElementById('message').value = ""
 
